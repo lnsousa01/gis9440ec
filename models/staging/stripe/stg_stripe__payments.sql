@@ -1,6 +1,6 @@
-SELECT *
+SELECT
 id as payment_id,
-ordeid as order_id,
+orderid as order_id,
 paymentmethod as payment_method,
 status,
 amount,
