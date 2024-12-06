@@ -31,9 +31,9 @@ customer_orders as (
 ),
 lifetime_value as (
     select sum(amount) as lifetime_value, 
-    customer_id 
+    order_id 
     from payments
-    group by customer_id
+    group by order_id
 ),
 
 final as (
@@ -45,12 +45,13 @@ final as (
         customer_orders.first_order_date,
         customer_orders.most_recent_order_date,
         coalesce (customer_orders.number_of_orders, 0) 
-        as number_of_orders
+        as number_of_orders,
+        lifetime_value.lifetime_value
 
     from customers
-
+    left join orders using (customer_id)
     left join customer_orders using (customer_id)
-    left join lifetime_value using (customer_id)
+    left join lifetime_value using (order_id)
 
 )
 
