@@ -3,6 +3,7 @@ id as payment_id,
 orderid as order_id,
 paymentmethod as payment_method,
 status,
-amount,
-created
+--below two changes to match Exemplar model:
+amount/100 as amount
+created as created_at
 FROM dbt-tutorial.stripe.payment
