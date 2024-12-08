@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: stg_stripe__payments
-    description:
+    description: stripe payments data
     columns:
       - name: payment_id
         description: Primary key for payments
