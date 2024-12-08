@@ -8,14 +8,15 @@ models:
           - relationships:
               to: ref('stg_jaffle_shop__orders')
               field: customer_id
-                - unique
-                - not_null
+          - unique
+          - not_null
 
   - name: stg_jaffle_shop__orders
     columns:
       - name: order_id
         tests:
           - not_null
+          - unique
       - name: status
         tests:
           - accepted_values:
