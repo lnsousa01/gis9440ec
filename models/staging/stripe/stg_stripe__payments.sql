@@ -6,4 +6,4 @@ status,
 --below two changes to match Exemplar model:
 amount/100 as amount
 created as created_at
-FROM {{ source('stripe', 'payment') }}
+FROM dbt-tutorial.stripe.payment

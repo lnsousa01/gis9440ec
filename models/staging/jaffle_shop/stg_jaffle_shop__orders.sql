@@ -4,4 +4,4 @@ select
     order_date,
     status
 
-from {{ source('jaffle_shop', 'orders') }}
+from dbt-tutorial.jaffle_shop.orders
